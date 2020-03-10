@@ -30,6 +30,7 @@ server.get('/api/users', (req, res) => {
  
 server.post("/api/users", (req, res) => {
     const userInfo = req.body;
+    console.log(userInfo);
     userInfo.id = shortid.generate();
     UsersInfo.push(userInfo);
 
@@ -37,7 +38,19 @@ server.post("/api/users", (req, res) => {
 
 
 })
-
+// server.post('/api/users', (req, res) => {
+//     Users.insert()
+//         .then(users => {
+//             console.log('Users', users);
+//             res.status(200).json(users); 
+//         })
+//         .catch(error => {
+//             console.log(error);
+//             res.status(500).json({
+//                 errorMessage: 'Sorry there was an error fetching users',
+//             });
+//         });
+// });
 
 
 
